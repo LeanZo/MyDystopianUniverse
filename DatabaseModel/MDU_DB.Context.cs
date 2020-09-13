@@ -10,15 +10,21 @@
 namespace DatabaseModel
 {
     using System;
+    using System.Configuration;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
     public partial class MDU_DB_Entities : DbContext
     {
         public MDU_DB_Entities()
-            : base("name=MDU_DB_Entities")
+            : base(ConfigurationManager.AppSettings["SQLSERVER_CONNECTION_STRING"])
         {
         }
+        
+        //public MDU_DB_Entities()
+        //    : base("name=MDU_DB_Entities")
+        //{
+        //}
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
