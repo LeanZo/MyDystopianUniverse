@@ -13,10 +13,10 @@ namespace DatabaseModel
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class db6e6078fe235a432aa0afa881016f8245Entities : DbContext
+    public partial class MDU_DB_Entities : DbContext
     {
-        public db6e6078fe235a432aa0afa881016f8245Entities()
-            : base("name=db6e6078fe235a432aa0afa881016f8245Entities")
+        public MDU_DB_Entities()
+            : base("name=MDU_DB_Entities")
         {
         }
     

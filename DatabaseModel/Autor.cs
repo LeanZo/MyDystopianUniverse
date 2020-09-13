@@ -12,7 +12,9 @@ namespace DatabaseModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Autor
+    using DatabaseModel.Core;
+    
+    public partial class Autor : IBaseClass
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Autor()

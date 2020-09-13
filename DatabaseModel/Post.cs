@@ -12,7 +12,9 @@ namespace DatabaseModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Post
+    using DatabaseModel.Core;
+    
+    public partial class Post : IBaseClass
     {
         public int Id { get; set; }
         public string Titulo { get; set; }

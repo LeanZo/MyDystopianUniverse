@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="db6e6078fe235a432aa0afa881016f8245Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MDU_DB_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Autor">
           <Key>
             <PropertyRef Name="ATR_ID" />
@@ -41,7 +41,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="db6e6078fe235a432aa0afa881016f8245ModelStoreContainer">
+        <EntityContainer Name="MDU_DB_ModelStoreContainer">
           <EntitySet Name="Autor" EntityType="Self.Autor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Post__PST_AUTOR___173876EA" Association="Self.FK__Post__PST_AUTOR___173876EA">
@@ -53,7 +53,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="db6e6078fe235a432aa0afa881016f8245Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MDU_DB_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Autor">
           <Key>
             <PropertyRef Name="Id" />
@@ -92,7 +92,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="db6e6078fe235a432aa0afa881016f8245Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MDU_DB_Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Autors" EntityType="Self.Autor" />
           <EntitySet Name="Posts" EntityType="Self.Post" />
           <AssociationSet Name="FK__Post__PST_AUTOR___173876EA" Association="Self.FK__Post__PST_AUTOR___173876EA">
@@ -105,9 +105,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="db6e6078fe235a432aa0afa881016f8245ModelStoreContainer" CdmEntityContainer="db6e6078fe235a432aa0afa881016f8245Entities">
+        <EntityContainerMapping StorageEntityContainer="MDU_DB_ModelStoreContainer" CdmEntityContainer="MDU_DB_Entities">
           <EntitySetMapping Name="Autors">
-            <EntityTypeMapping TypeName="db6e6078fe235a432aa0afa881016f8245Model.Autor">
+            <EntityTypeMapping TypeName="MDU_DB_Model.Autor">
               <MappingFragment StoreEntitySet="Autor">
                 <ScalarProperty Name="Id" ColumnName="ATR_ID" />
                 <ScalarProperty Name="PrimeiroNome" ColumnName="ATR_PRIMEIRO_NOME" />
@@ -122,7 +122,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Posts">
-            <EntityTypeMapping TypeName="db6e6078fe235a432aa0afa881016f8245Model.Post">
+            <EntityTypeMapping TypeName="MDU_DB_Model.Post">
               <MappingFragment StoreEntitySet="Post">
                 <ScalarProperty Name="Id" ColumnName="PST_ID" />
                 <ScalarProperty Name="Titulo" ColumnName="PST_TITULO" />
