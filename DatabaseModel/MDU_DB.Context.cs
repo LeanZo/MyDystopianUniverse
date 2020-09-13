@@ -17,7 +17,7 @@ namespace DatabaseModel
     public partial class MDU_DB_Entities : DbContext
     {
         public MDU_DB_Entities()
-            : base(ConfigurationManager.AppSettings["SQLSERVER_CONNECTION_STRING"].Replace("&#39;", "'"))
+            : base(ConfigurationManager.AppSettings["SQLSERVER_CONNECTION_STRING_MDU_DB"])
             //: base("metadata=res://*/MDU_DB.csdl|res://*/MDU_DB.ssdl|res://*/MDU_DB.msl;provider=System.Data.SqlClient;provider connection string='data source=6e6078fe-235a-432a-a0af-a881016f8245.sqlserver.sequelizer.com;initial catalog=db6e6078fe235a432aa0afa881016f8245;persist security info=True;user id=fbjjspmaollahkwf;password=pvk4JKkcKQLRazLS5UsuW6zVchYUGeNdSDWLAs2UrGyUymzEJjRQ8xjs4wZAUyBE;MultipleActiveResultSets=True;App=EntityFramework'")
             //: base("metadata=res://*/DB.csdl|res://*/DB.ssdl|res://*/DB.msl;provider=System.Data.SqlClient;provider connection string=&#39;Server=6e6078fe-235a-432a-a0af-a881016f8245.sqlserver.sequelizer.com;Database=db6e6078fe235a432aa0afa881016f8245;User ID=fbjjspmaollahkwf;Password=pvk4JKkcKQLRazLS5UsuW6zVchYUGeNdSDWLAs2UrGyUymzEJjRQ8xjs4wZAUyBE;&#39;")
         {
