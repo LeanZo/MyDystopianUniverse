@@ -1,6 +1,6 @@
 using System;
 
-namespace MyDystopianUniverse.Models
+namespace MyDystopianUniverseNF.Models
 {
     public class ErrorViewModel
     {
