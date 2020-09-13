@@ -1,0 +1,45 @@
+﻿body {
+}
+
+.conteudo-container {
+    width: 1060px;
+    height: 100%;
+    margin: auto;
+}
+
+.conteudo-esquerda-container {
+    width: 700px;
+    height: 100%;
+    margin-right: 10px;
+    float: left;
+}
+
+.esquerda-item-container {
+    width: 100%;
+    height: 700px;
+    margin-bottom: 10px;
+}
+
+.conteudo-direita-container {
+    width: 350px;
+    height: auto;
+    margin-left: 0;
+    float: right;
+    position: sticky;
+    top: 10px;
+}
+
+.direita-item-container {
+    width: 100%;
+    height: 350px;
+}
+
+.olho-container {
+    display:flex;
+}
+
+.olho {
+    width: 200px;
+    margin: auto;
+    margin-top: -20px;
+}
