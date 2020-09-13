@@ -58,7 +58,7 @@
     <Compile Include="Autor.cs">
       <DependentUpon>MDU_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="MDU_DB_CONNECTION_STRING.cs" />
     <Compile Include="Core\DefaultCore.cs" />
     <Compile Include="Core\IBaseClass.cs" />
     <Compile Include="Core\PostCore.cs" />
