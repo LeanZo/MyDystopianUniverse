@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db6e6078fe235a432aa0afa881016f8245Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Autor">
+          <Key>
+            <PropertyRef Name="ATR_ID" />
+          </Key>
+          <Property Name="ATR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ATR_PRIMEIRO_NOME" Type="varchar" MaxLength="50" />
+          <Property Name="ATR_MEIO_NOME" Type="varchar" MaxLength="50" />
+          <Property Name="ATR_ULTIMO_NOME" Type="varchar" MaxLength="50" />
+          <Property Name="ATR_PEN_NAME" Type="varchar" MaxLength="150" />
+          <Property Name="ATR_EMAIL" Type="varchar" MaxLength="200" />
+          <Property Name="ATR_TWITTER" Type="varchar" MaxLength="200" />
+          <Property Name="ATR_BIOGRAFIA" Type="varchar(max)" />
+          <Property Name="ATR_BIOGRAFIA_RESUMIDA" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="PST_ID" />
+          </Key>
+          <Property Name="PST_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PST_TITULO" Type="varchar(max)" />
+          <Property Name="PST_CONTEUDO" Type="varchar(max)" />
+          <Property Name="PST_AUTOR_ID" Type="int" />
+          <Property Name="PST_DATA_HORA" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__Post__PST_AUTOR___173876EA">
+          <End Role="Autor" Type="Self.Autor" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Autor">
+              <PropertyRef Name="ATR_ID" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="PST_AUTOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db6e6078fe235a432aa0afa881016f8245ModelStoreContainer">
+          <EntitySet Name="Autor" EntityType="Self.Autor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Post__PST_AUTOR___173876EA" Association="Self.FK__Post__PST_AUTOR___173876EA">
+            <End Role="Autor" EntitySet="Autor" />
+            <End Role="Post" EntitySet="Post" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db6e6078fe235a432aa0afa881016f8245Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Autor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrimeiroNome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MeioNome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UltimoNome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PenName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Twitter" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Biografia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BiografiaResumida" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK__Post__PST_AUTOR___173876EA" FromRole="Autor" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Conteudo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AutorId" Type="Int32" />
+          <Property Name="DataHora" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Autor" Relationship="Self.FK__Post__PST_AUTOR___173876EA" FromRole="Post" ToRole="Autor" />
+        </EntityType>
+        <Association Name="FK__Post__PST_AUTOR___173876EA">
+          <End Role="Autor" Type="Self.Autor" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Autor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="AutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db6e6078fe235a432aa0afa881016f8245Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Autors" EntityType="Self.Autor" />
+          <EntitySet Name="Posts" EntityType="Self.Post" />
+          <AssociationSet Name="FK__Post__PST_AUTOR___173876EA" Association="Self.FK__Post__PST_AUTOR___173876EA">
+            <End Role="Autor" EntitySet="Autors" />
+            <End Role="Post" EntitySet="Posts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db6e6078fe235a432aa0afa881016f8245ModelStoreContainer" CdmEntityContainer="db6e6078fe235a432aa0afa881016f8245Entities">
+          <EntitySetMapping Name="Autors">
+            <EntityTypeMapping TypeName="db6e6078fe235a432aa0afa881016f8245Model.Autor">
+              <MappingFragment StoreEntitySet="Autor">
+                <ScalarProperty Name="Id" ColumnName="ATR_ID" />
+                <ScalarProperty Name="PrimeiroNome" ColumnName="ATR_PRIMEIRO_NOME" />
+                <ScalarProperty Name="MeioNome" ColumnName="ATR_MEIO_NOME" />
+                <ScalarProperty Name="UltimoNome" ColumnName="ATR_ULTIMO_NOME" />
+                <ScalarProperty Name="PenName" ColumnName="ATR_PEN_NAME" />
+                <ScalarProperty Name="Email" ColumnName="ATR_EMAIL" />
+                <ScalarProperty Name="Twitter" ColumnName="ATR_TWITTER" />
+                <ScalarProperty Name="Biografia" ColumnName="ATR_BIOGRAFIA" />
+                <ScalarProperty Name="BiografiaResumida" ColumnName="ATR_BIOGRAFIA_RESUMIDA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="db6e6078fe235a432aa0afa881016f8245Model.Post">
+              <MappingFragment StoreEntitySet="Post">
+                <ScalarProperty Name="Id" ColumnName="PST_ID" />
+                <ScalarProperty Name="Titulo" ColumnName="PST_TITULO" />
+                <ScalarProperty Name="Conteudo" ColumnName="PST_CONTEUDO" />
+                <ScalarProperty Name="AutorId" ColumnName="PST_AUTOR_ID" />
+                <ScalarProperty Name="DataHora" ColumnName="PST_DATA_HORA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
