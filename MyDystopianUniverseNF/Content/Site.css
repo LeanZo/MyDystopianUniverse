@@ -175,14 +175,3 @@ body {
 .svg-filtro-purple-200 {
     filter: invert(78%) sepia(43%) saturate(2115%) hue-rotate(213deg) brightness(94%) contrast(96%);
 }
-
-/* COR DA SELECAO DE TEXTO */
-::-moz-selection { /* Code for Firefox */
-    /*color: rgba(255,255,255, 0.87);*/
-    background: #E194EA;
-}
-
-::selection {
-   /*color: rgba(255,255,255, 0.87);*/
-    background: #E194EA;
-}
