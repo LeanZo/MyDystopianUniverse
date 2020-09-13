@@ -1,2 +1,2 @@
-# MyDystopianUniverse
- MyDysopianUniverse is a Personal website made with ASP NET Core 3.1
+# My Dystopian Universe
+ My Dystopian Universe is a personal website made with ASP NET.
