@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+DatabaseModel/App.config
+DatabaseModel/MDU_DB_CONNECTION_STRING.cs
+MyDystopianUniverseNF/Web.config
