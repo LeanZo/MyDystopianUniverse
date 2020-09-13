@@ -17,7 +17,7 @@ namespace DatabaseModel
     public partial class MDU_DB_Entities : DbContext
     {
         public MDU_DB_Entities()
-            : base(ConfigurationManager.AppSettings["SQLSERVER_CONNECTION_STRING"])
+            : base(ConfigurationManager.AppSettings["SQLSERVER_CONNECTION_STRING"].ToString())
         {
         }
         
