@@ -130,6 +130,10 @@ body {
 
 /*BACKGROUDS*/
 
+.dp-absolute-zero {
+    background: #000000 !important;
+}
+
 .dp00 {
     background: #0e0f0f !important;
 }
@@ -185,4 +189,21 @@ body {
 ::selection {
    /*color: rgba(255,255,255, 0.87);*/
     background: #E194EA;
+}
+
+/* FONTES */
+.mukta-mahee {
+    font-family: 'Mukta Mahee', sans-serif;
+}
+
+.livvic {
+    font-family: 'Livvic', sans-serif;
+}
+
+.kumbh-sans {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.open-sans {
+    font-family: 'Open Sans', sans-serif;
 }
