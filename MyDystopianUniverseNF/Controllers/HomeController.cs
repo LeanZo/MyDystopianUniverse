@@ -14,19 +14,21 @@ namespace MyDystopianUniverseNF.Controllers
             return View();
         }
 
-        public JsonResult CarregarPosts(int UltimoPostId = 0)
+        public JsonResult CarregarPosts(int UltimoPostId = 0, int Top = 10)
         {
-            var post = new PostCore().RetornarPorId(1);
+            var posts = new PostCore().RetornarListaDePosts(UltimoPostId, Top);
 
-            var post_json = new
-            {
-                post.Id,
-                post.Titulo,
-                post.Conteudo,
-                post.DataHora,
-                AutorId = post.Autor.Id,
-                PenName = post.Autor.PenName
-            };
+            var post_json = posts.Select(
+                post =>
+                new
+                {
+                    post.Id,
+                    post.Titulo,
+                    post.Conteudo,
+                    post.DataHora,
+                    AutorId = post.Autor.Id,
+                    PenName = post.Autor.PenName
+                });
 
             var json_result = Json(post_json, JsonRequestBehavior.AllowGet);
             json_result.MaxJsonLength = int.MaxValue;

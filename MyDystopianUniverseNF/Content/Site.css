@@ -66,8 +66,8 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  /* Margin bottom by footer height + 16px (Margin) */
+  margin-bottom: 76px;
 }
 
 .footer {
@@ -78,12 +78,21 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
+.template-header {
+    margin-bottom: 16px !important;
+}
+
 .fw {
     width: 100%;
 }
 
 .fh {
     height: 100%;
+}
+
+a.link-reset {
+    text-decoration: none;
+    color: inherit;
 }
 
 /*TEXT COLORS*/

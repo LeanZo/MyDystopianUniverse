@@ -3,7 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MyDystopianUniverse</title>
+    @if (ViewData["Title"] == "")
+    {
+        <title>My Dystopian Universe</title>
+    }
+    else
+    {
+        <title>@ViewData["Title"] - My Dystopian Universe</title>
+    }
     <link href="https://fonts.googleapis.com/css?family=Livvic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kumbh+Sans" rel="stylesheet">
@@ -14,7 +21,7 @@
 </head>
 <body class="dp-absolute-zero">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3 dp02 full-white">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow template-header dp02 full-white">
             <div class="navbar-container">
                 <a class="navbar-brand purple-200 livvic" href="/">My Dystopian Universe</a>
                 @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
